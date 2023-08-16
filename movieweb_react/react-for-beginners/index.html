@@ -6,7 +6,55 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
-	<body></body>
+	<body>
+		<div id="root"></div>
+	</body>
 	<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 	<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<script type="text/babel">
+		const root = document.getElementById("root");
+		const App = () => {
+			const [amount, setAmount] = React.useState();
+			const [inverted, setinverted] = React.useState(false);
+			const onChange = (e) => {
+				setAmount(e.target.value);
+			};
+			const onRestBtn = () => {
+				setAmount(0);
+			}
+			const onFlip = () => setinverted((current) => !current);
+			return (
+				<div>
+					<div>
+						<h1>Super Converter</h1>
+						<h3>FlipState : {inverted}</h3>
+						<label htmlFor="minutes">분</label>
+						<input
+							value={!inverted ? amount : amount * 60}
+							onChange={onChange}
+							placeholder="분"
+							id="minutes"
+							type="number"
+							disabled = {inverted}
+						/>
+					</div>
+					<div>
+						<label htmlFor="hours">시간</label>
+						<input
+							value={inverted ? amount : Math.round(amount/60)}
+							placeholder="시간"
+							id="hours"
+							type="number"
+							disabled = {!inverted}
+							onChange = {onChange}
+						/>
+					</div>
+					<button onClick={onRestBtn}>리셋</button>
+					<button onClick={onFlip}>플립</button>
+				</div>
+			);
+		};
+		ReactDOM.render(<App />, root);
+	</script>
 </html>
