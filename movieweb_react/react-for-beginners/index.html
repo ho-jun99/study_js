@@ -14,7 +14,12 @@
 	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	<script type="text/babel">
 		const root = document.getElementById("root");
-		const App = () => {
+		const KmToMiles = () => {
+			return (
+				<h3>Km To Miles</h3>
+			)
+		}
+		const MinutesToHours = () => {
 			const [amount, setAmount] = React.useState();
 			const [inverted, setinverted] = React.useState(false);
 			const onChange = (e) => {
@@ -27,7 +32,6 @@
 			return (
 				<div>
 					<div>
-						<h1>Super Converter</h1>
 						<h3>FlipState : {inverted}</h3>
 						<label htmlFor="minutes">분</label>
 						<input
@@ -46,12 +50,31 @@
 							placeholder="시간"
 							id="hours"
 							type="number"
-							disabled = {!inverted}
+							disabled = {!inverted} 
 							onChange = {onChange}
 						/>
 					</div>
 					<button onClick={onRestBtn}>리셋</button>
 					<button onClick={onFlip}>플립</button>
+				</div>
+			);
+		};
+		const App = () => {
+			const [index, setIndex] = React.useState("-1")
+			const onSelect = (e) => {
+				setIndex(e.target.value);
+			}
+			return (
+				<div>
+					<h1>Super Converter</h1>
+					<select value={index} onChange={onSelect}>
+						<option value="-1">Please Select</option>
+						<option value="0">Minutes to Hours</option>
+						<option value="1">Km to Miles</option>
+						</select>
+						<hr/>
+					{index === "0" ? <MinutesToHours/> : null}
+					{index === "1" ? <KmToMiles/> : null}
 				</div>
 			);
 		};
