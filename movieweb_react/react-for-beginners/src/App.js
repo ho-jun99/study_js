@@ -1,27 +1,24 @@
-import styles from "./css/App.module.css"
-import {useState,useEffect} from "react";
+import {useState, useEffect} from "react";
+
+
+function Hello() {
+    useEffect(
+        () => {
+            console.log(" :)")
+            return () => console.log(" :(")
+        }, [])
+    return (
+        <h1>HELLO WORLD !</h1>
+    )
+}
 
 function App() {
-    const [counter,setCounter] = useState(0);
-    const [keyword, setKeyword] = useState("")
-    const onClick = () => setCounter((prev) => prev + 1);
-    console.log("every time will call !")
-    useEffect(() => {
-        console.log("CALLING API")
-    }, []);
-
-    useEffect(() => {
-        if ( keyword !== "") console.log("SEARCH FOR ", keyword)
-    }, [keyword]);
-    const onKeywordChg = (e) => {
-        setKeyword(e.target.value);
-        console.log(keyword)
-    }
+    const [showing, setShowing] = useState(false)
+    const onClick = () => setShowing((prev) => !prev);
     return (
         <div>
-            <input value={keyword} onChange={onKeywordChg} type={"text"} placeholder={"여기에 검색어를 입력해주세요"}/>
-            <h1 className={styles.title}>{counter}</h1>
-            <button onClick={onClick}>클릭클릭</button>
+            <button onClick={onClick}> {showing ? "HIDE" : "SHOW"}</button>
+            {showing ? <Hello/> : null}
         </div>
     );
 }
