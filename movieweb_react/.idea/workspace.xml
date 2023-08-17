@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="43e50239-8d64-4090-8211-16e387ce5c85" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/react-for-beginners/index.html" beforeDir="false" />
+    <list default="true" id="07505a63-7d7a-477c-ae20-bc89e5ac3d6e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/movieweb_react.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +19,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
+  "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2U6Bpyr0UadQ6WWAz3H9YSnGBLo" />
+  <component name="ProjectId" id="2U6FIrjJtwqwtfqIC4a9b3r8qJG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,10 +33,6 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/snlcom/study_js/movieweb_react",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -44,12 +40,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="43e50239-8d64-4090-8211-16e387ce5c85" name="Changes" comment="" />
-      <created>1692250337958</created>
+      <changelist id="07505a63-7d7a-477c-ae20-bc89e5ac3d6e" name="Changes" comment="" />
+      <created>1692252046812</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1692250337958</updated>
-      <workItem from="1692250338995" duration="382000" />
+      <updated>1692252046812</updated>
+      <workItem from="1692252047821" duration="64000" />
     </task>
     <servers />
   </component>
