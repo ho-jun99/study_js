@@ -1,25 +1,32 @@
 import {useState, useEffect} from "react";
-
-
-function Hello() {
-    useEffect(
-        () => {
-            console.log(" :)")
-            return () => console.log(" :(")
-        }, [])
-    return (
-        <h1>HELLO WORLD !</h1>
-    )
-}
-
 function App() {
-    const [showing, setShowing] = useState(false)
-    const onClick = () => setShowing((prev) => !prev);
+    const [myTodo,setMyTodo] = useState("")
+    const [myTodos,setMyTodos] = useState([]);
+    const onChgTodoInput = (e) => {
+        setMyTodo(e.target.value);
+    };
+    const onTodoSubmit = (e) => {
+        e.preventDefault()
+        if (myTodo === "") return;
+        setMyTodo("");
+        setMyTodos((prevArray) => [...myTodos,myTodo])
+        console.log(myTodo)
+    }
+
+    console.log(myTodos)
     return (
-        <div>
-            <button onClick={onClick}> {showing ? "HIDE" : "SHOW"}</button>
-            {showing ? <Hello/> : null}
-        </div>
+        <>
+            <h1>CURRENT TODOS :  {myTodos.length}</h1>
+            <form onSubmit={onTodoSubmit}>
+                <input value={myTodo} onChange={onChgTodoInput} type={"text"} placeholder={"Write your to do"}></input>
+                <button type={"submit"}>확인</button>
+            </form>
+            <hr/>
+            <ul></ul>
+                {myTodos.map((item,index) => {
+                    return <li key={index+item} >{item}</li>
+                })}
+        </>
     );
 }
 
