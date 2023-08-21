@@ -18,7 +18,7 @@ export default function Home() {
   console.log(movies)
   return (
       <>
-        {loading ? <h1>Now Loading...</h1> : movies.map((movie) => <Movie key={movie.id} title={movie.title} genres={movie.genres}
+        {loading ? <h1>Now Loading...</h1> : movies.map((movie) => <Movie key={movie.id} id={movie.id} title={movie.title} genres={movie.genres}
                                                                           summary={movie.summary}
                                                                           coverImg={movie.medium_cover_image}/>)}
       </>
